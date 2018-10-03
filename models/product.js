@@ -10,4 +10,4 @@ var schema=new Schema({
 	description:String,
 	price:String
 });
-model.exports=mongoose.model("Product",schema);
+module.exports=mongoose.model("Product",schema);
