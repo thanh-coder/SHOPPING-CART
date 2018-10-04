@@ -1,3 +1,4 @@
+var express = require("express");
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -20,6 +21,7 @@ var mongoose = require("mongoose");
 
 
 var app = express();
+port=4200;
 
 mongoose.connect('mongodb://localhost/shopping',{ useNewUrlParser: true });
 // mongoose.connect(db.stringdb, { useNewUrlParser: true });
@@ -79,5 +81,9 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
+
+app.listen(port, function() {
+    console.log(port + " is running")
+})
 
 module.exports = app;
